@@ -1,0 +1,113 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-title {
+    color: #333333;
+    margin-bottom: 25px;
+}
+
+/* Стили самой формы */
+.feedback-form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.feedback-form__group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-form__label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+}
+
+.feedback-form__input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.feedback-form__textarea {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100px;
+    resize: vertical;
+    max-width: 100%;
+}
+
+.feedback-form__input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.feedback-form__radio-container {
+    display: flex;
+    gap: 20px;
+    padding-top: 5px;
+}
+
+.feedback-form__radio-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Кнопка отправки */
+.feedback-form__submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.feedback-form__link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.feedback-form__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.feedback-form__submit:hover {
+    background-color: #555555;
+}
+
+.feedback-form__submit:active {
+    transform: translateY(1px);
+}

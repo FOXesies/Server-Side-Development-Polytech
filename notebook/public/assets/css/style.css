@@ -1,0 +1,67 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.menu-container, .submenu-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.menu-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-blue { background-color: blue; }
+.btn-red { background-color: red; }
+.btn-small { font-size: 12px; padding: 5px 10px; }
+
+.data-table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.pagination { margin-top: 20px; }
+.pagination a {
+    margin: 0 5px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+.pagination a:hover { border: 2px solid #333; }
+
+.main-footer {
+    flex-shrink: 0;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.feedback-form { width: 400px; display: flex; flex-direction: column; gap: 10px; }
+.feedback-form__input { padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+.feedback-form__submit { background: #333; color: white; padding: 10px; border: none; cursor: pointer; }

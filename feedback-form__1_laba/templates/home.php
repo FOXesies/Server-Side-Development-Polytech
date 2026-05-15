@@ -1,10 +1,3 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Form</title>
-    
-    <link rel="stylesheet" href="/assets/css/home_style.css">
-</head>
 <section class="form-container">
     <h2 class="form-title">Форма отправки</h2>
     <form action="https://httpbin.org/post" method="post" class="feedback-form">
@@ -56,7 +49,6 @@
             <button type="submit" class="feedback-form__submit">Отправить</button>
             <a href="/second.php" class="feedback-form__link">Перейти на 2 страницу</a>
         </div>
-
     </div>
     </form>
 </section>

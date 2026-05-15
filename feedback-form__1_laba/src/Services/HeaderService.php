@@ -4,9 +4,6 @@ namespace App\Services;
 
 class HeaderService
 {
-    /**
-     * Получает заголовки для указанного URL и возвращает их строкой
-     */
     public function getUrlHeaders(string $url): string
     {
         // Настройка контекста, чтобы избежать блокировок

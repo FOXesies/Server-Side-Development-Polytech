@@ -3,7 +3,6 @@ require_once __DIR__ . '/../src/Services/HeaderService.php';
 use App\Services\HeaderService;
 
 $service = new HeaderService();
-// Парсим заголовки httpbin, так как он фигурирует в ТЗ
 $headers = $service->getUrlHeaders('https://httpbin.org/post');
 ?>
 

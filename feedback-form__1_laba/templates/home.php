@@ -47,7 +47,7 @@
 
         <div class="feedback-form__actions">
             <button type="submit" class="feedback-form__submit">Отправить</button>
-            <a href="/second.php" class="feedback-form__link">Перейти на 2 страницу</a>
+            <a href="./second.php" class="feedback-form__link">Перейти на 2 страницу</a>
         </div>
     </div>
     </form>

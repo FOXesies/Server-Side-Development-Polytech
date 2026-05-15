@@ -17,10 +17,8 @@ $headers = $service->getUrlHeaders('https://httpbin.org/post');
             ><?= htmlspecialchars($headers) ?></textarea>
         </div>
 
-        <div class="feedback-form__actions">
-            <button href="/" class="feedback-form__submit">
-                Вернуться к форме
-            </button>
+        <div class="feedback-form__actions">            
+            <a href="./" class="feedback-form__link">Вернуться к форме</a>
         </div>
     </div>
 </section>

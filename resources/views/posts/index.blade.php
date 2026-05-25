@@ -10,7 +10,9 @@
             @if($isFiltered)
                 <a href="{{ route('posts.index') }}" class="text-blue-500 hover:underline mr-4">Показать все</a>
             @endif
+            @if(request()->is('admin*'))
             <a href="{{ route('posts.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded">Добавить пост</a>
+            @endif
         </div>
     </div>
 
@@ -24,22 +26,26 @@
             <div class="border p-4 rounded-lg mb-4 bg-white shadow-sm">
                 <div class="flex justify-between text-sm text-gray-500 mb-2">
                     <span class="font-semibold text-gray-800">
+                        {{-- Ссылка на фильтрацию по автору остается публичной и доступна всем --}}
                         <a href="{{ route('posts.index', ['author_id' => $post['author']['id']]) }}" class="hover:text-blue-600 hover:underline">
                             {{ $post['author']['last_name'] }} {{ $post['author']['first_name'] }}
                         </a>
                     </span>
                     <span>{{ \Carbon\Carbon::parse($post['published_at'])->format('d.m.Y H:i') }}</span>
                 </div>
-                <p class="text-gray-700 whitespace-pre-line">{{ $post['content'] }}</p>
+                <p class="text-gray-700 whitespace-pre-line">{{ $post['content'] }}</p> 
+                @if(request()->is('admin*'))
+                    <div class="mt-4 pt-4 border-t flex space-x-3 text-sm">
+                        <a href="{{ route('admin.posts.edit', $post['id']) }}" class="text-blue-500 hover:underline">Редактировать</a>
+                        
+                        <form action="{{ route('admin.posts.destroy', $post['id']) }}" method="POST" onsubmit="return confirm('Удалить пост?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="text-red-500 hover:underline">Удалить</button>
+                        </form>
+                    </div>
+                @endif
                 
-                <div class="mt-4 pt-4 border-t flex space-x-3 text-sm">
-                    <a href="{{ route('posts.edit', $post['id']) }}" class="text-blue-500 hover:underline">Редактировать</a>
-                    <form action="{{ route('posts.destroy', $post['id']) }}" method="POST" onsubmit="return confirm('Удалить пост?');">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="text-red-500 hover:underline">Удалить</button>
-                    </form>
-                </div>
             </div>
         @endforeach
     @endif

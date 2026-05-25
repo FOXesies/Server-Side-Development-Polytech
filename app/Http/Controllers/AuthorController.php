@@ -35,7 +35,7 @@ class AuthorController extends Controller
         ]);
 
         $this->repository->save($validated);
-        return redirect()->route('authors.index')->with('success', 'Автор зарегистрирован');
+        return redirect()->route('admin.authors.index')->with('success', 'Автор зарегистрирован');
     }
 
     public function edit($id)
@@ -59,12 +59,12 @@ class AuthorController extends Controller
         ]);
 
         $this->repository->update($id, $validated);
-        return redirect()->route('authors.index')->with('success', 'Данные автора обновлены');
+        return redirect()->route('admin.authors.index')->with('success', 'Данные автора обновлены');
     }
 
     public function destroy($id)
     {
         $this->repository->delete($id);
-        return redirect()->route('authors.index')->with('success', 'Автор удален');
+        return redirect()->route('admin.authors.index')->with('success', 'Автор удален');
     }
 }

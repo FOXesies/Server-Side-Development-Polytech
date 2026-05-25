@@ -43,7 +43,7 @@ class PostController extends Controller
     public function create()
     {
         $authors = $this->authorRepository->getAll();
-        return view('posts.create', compact('authors'));
+        return view('admin.posts.create', compact('authors'));
     }
 
     public function store(Request $request)
@@ -67,12 +67,12 @@ class PostController extends Controller
     {
         $validated = $request->validate(['content' => 'required|string']);
         $this->postRepository->update($id, $validated);
-        return redirect()->route('posts.index')->with('success', 'Пост обновлен');
+        return redirect()->route('admin.posts.index')->with('success', 'Пост обновлен');
     }
 
     public function destroy($id)
     {
         $this->postRepository->delete($id);
-        return redirect()->route('posts.index')->with('success', 'Пост удален');
+        return redirect()->route('admin.posts.index')->with('success', 'Пост удален');
     }
 }

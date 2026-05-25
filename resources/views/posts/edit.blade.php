@@ -3,7 +3,7 @@
 @section('content')
 <div class="max-w-2xl mx-auto p-6 bg-white rounded shadow-sm">
     <h1 class="text-2xl font-bold mb-6">Редактировать пост</h1>
-    <form action="{{ route('posts.update', $post['id']) }}" method="POST">
+    <form action="{{ route('admin.posts.update', $post['id']) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="mb-4">

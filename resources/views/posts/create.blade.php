@@ -3,7 +3,7 @@
 @section('content')
 <div class="max-w-2xl mx-auto p-6 bg-white rounded shadow-sm">
     <h1 class="text-2xl font-bold mb-6">Создать пост</h1>
-    <form action="{{ route('posts.store') }}" method="POST">
+    <form action="{{ route('admin.posts.store') }}" method="POST">
         @csrf
         <div class="mb-4">
             <label class="block text-gray-700">Автор</label>

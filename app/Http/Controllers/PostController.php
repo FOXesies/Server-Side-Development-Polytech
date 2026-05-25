@@ -43,7 +43,7 @@ class PostController extends Controller
     public function create()
     {
         $authors = $this->authorRepository->getAll();
-        return view('admin.posts.create', compact('authors'));
+        return view('posts.create', compact('authors'));
     }
 
     public function store(Request $request)
@@ -54,7 +54,7 @@ class PostController extends Controller
         ]);
 
         $this->postRepository->save($validated);
-        return redirect()->route('posts.index')->with('success', 'Пост добавлен');
+        return redirect()->route('admin.posts.index')->with('success', 'Пост успешно добавлен!');
     }
 
     public function edit($id)
